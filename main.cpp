@@ -28,18 +28,22 @@ int main()
        
 		if (Keyboard::isKeyPressed(Keyboard::Right)){
 				hero_sprite.move(0.1, 0); //move(x, y)
+				hero_sprite.setTextureRect(IntRect(0, 160, 80, 80));
 		}
 
 		if (Keyboard::isKeyPressed(Keyboard::Left)){
 				hero_sprite.move(-0.1, 0);
+				hero_sprite.setTextureRect(IntRect(0, 80, 80, 80));
 		}
 		
 		if (Keyboard::isKeyPressed(Keyboard::Up)){
 				hero_sprite.move(0, -0.1);
+				hero_sprite.setTextureRect(IntRect(0, 240, 80, 80));
 		}
 
 		if (Keyboard::isKeyPressed(Keyboard::Down)){
 				hero_sprite.move(0, 0.1);
+				hero_sprite.setTextureRect(IntRect(0, 0, 80, 80));
 		}
 		
 
