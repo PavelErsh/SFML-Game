@@ -20,8 +20,10 @@ class Player{
 	public:
 		Sprite sprite;
 		Player(String user_file, float user_center_x, float user_center_y, float user_w, float user_h);
+		void check_frame(int frame_number);
 		void update(float time);
-		void control(float time);
+		void control();
+		void run_animate(float time);
 
 };
 
@@ -50,7 +52,13 @@ Player::Player(String user_file, float user_center_x, float user_center_y, float
 	sprite.setPosition( center_x, center_y ); 
 }
 
-void Player::update(float time){
+void  Player::check_frame( int frame_number){
+	if( current_rect > frame_number){
+			current_rect -= 4;
+	}
+}
+
+void Player::update(float time ){
 
 	if (derection == 0)
 	{
@@ -82,68 +90,72 @@ void Player::update(float time){
 	sprite.setPosition(center_x, center_y);
 }
 
-void Player::control(float time){
+void Player::control( ){
 	if (Keyboard::isKeyPressed(Keyboard::Right)){
 			derection = 0;
 			speed = 0.1;
-			current_rect += time * 0.005;
-
-			if (current_rect > 4){
-				current_rect -= 4;
-			}
-
-			sprite.setTextureRect(IntRect(80 * int(current_rect), 160, 80, 80));
 		}
 
 	if (Keyboard::isKeyPressed(Keyboard::Left)){
 			derection = 1;
 
 			speed = 0.1;
-			current_rect += time*0.005;
-
-			if( current_rect > 4){
-				current_rect -= 4;
-			}
-
-			sprite.setTextureRect(IntRect(80 * int(current_rect), 80, 80, 80));	
 		}
 		
 	if (Keyboard::isKeyPressed(Keyboard::Up)){
 			derection = 3;
-
 			speed = 0.1;
-
-			current_rect += time*0.005;
-
-			if( current_rect > 4){
-				current_rect -= 4;
-				}
-
-			sprite.setTextureRect(IntRect(80 * int(current_rect), 240, 80, 80));
 		}
 
 	if (Keyboard::isKeyPressed(Keyboard::Down)){
 			derection = 2;
-
 			speed = 0.1;
-
-			current_rect += time*0.005;
-
-			if( current_rect > 4){
-			current_rect -= 4;
-			}
-
-			sprite.setTextureRect(IntRect(80 * int(current_rect), 0, 80, 80));	
 		}
+}
+
+void Player::run_animate(float time){
+	if (Keyboard::isKeyPressed(Keyboard::Right))
+	{
+		current_rect += time * 0.005;
+
+		check_frame(4);
+
+		sprite.setTextureRect(IntRect(80 * int(current_rect), 160, 80, 80));
+	}
+
+	if (Keyboard::isKeyPressed(Keyboard::Left))
+	{
+		current_rect += time*0.005;
+
+		check_frame(4);
+
+		sprite.setTextureRect(IntRect(80 * int(current_rect), 80, 80, 80));	
+	}
+
+	if (Keyboard::isKeyPressed(Keyboard::Down))
+	{
+		current_rect += time*0.005;
+
+		check_frame(4);
+
+		sprite.setTextureRect(IntRect(80 * int(current_rect), 0, 80, 80));	
+	}
+
+	if (Keyboard::isKeyPressed(Keyboard::Up))
+	{
+		current_rect += time*0.005;
+
+		check_frame(4);
+
+		sprite.setTextureRect(IntRect(80 * int(current_rect), 240, 80, 80));
+	}
 }
 
 int main()
 {
     RenderWindow window(sf::VideoMode(800, 800), "SFML test sample!");
-    
     Player my_player("images/horse.png", 50, 25, 80,80);
     
-
 	Clock clock;
 	
     while (window.isOpen())
@@ -151,18 +163,21 @@ int main()
 		float time = clock.getElapsedTime().asMicroseconds();
 		time = time / 1000;	
 		clock.restart();
+		
 		Event event;
         while (window.pollEvent(event))
         {
 		    if (event.type == Event::Closed)
                 window.close();
         	}
-		my_player.control( time);
-		
-		my_player.update(time);
-        window.clear();
-        window.draw(my_player.sprite);
-        window.display();
+
+			my_player.control();
+			my_player.update(time);
+			my_player.run_animate(time);
+
+			window.clear();
+			window.draw(my_player.sprite);
+			window.display();
     }
 
     return 0;
