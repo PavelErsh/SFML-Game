@@ -21,7 +21,7 @@ class Player{
 		Sprite sprite;
 		Player(String user_file, float user_center_x, float user_center_y, float user_w, float user_h);
 		void update(float time);
-		void control();
+		void control(float time);
 
 };
 
@@ -82,7 +82,7 @@ void Player::update(float time){
 	sprite.setPosition(center_x, center_y);
 }
 
-void Player::control(){
+void Player::control(float time){
 	if (Keyboard::isKeyPressed(Keyboard::Right)){
 			derection = 0;
 			speed = 0.1;
@@ -157,7 +157,7 @@ int main()
 		    if (event.type == Event::Closed)
                 window.close();
         	}
-		my_player.control();
+		my_player.control( time);
 		
 		my_player.update(time);
         window.clear();
