@@ -1,22 +1,50 @@
 #include <SFML/Graphics.hpp>
+using namespace sf;
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    RenderWindow window(sf::VideoMode(600, 600), "SFML test sample!");
+    
+    Image hero_image;
+    hero_image.loadFromFile("horse.png");
+    
+    Texture hero_texture;
+    hero_texture.loadFromImage(hero_image);
+
+    Sprite hero_sprite;
+    hero_sprite.setTexture(hero_texture);
+    hero_sprite.setTextureRect(IntRect(0, 160, 80, 80));
+    hero_sprite.setPosition(50, 50);
+   
 
     while (window.isOpen())
     {
-        sf::Event event;
+        Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
+		    if (event.type == Event::Closed)
                 window.close();
         }
+       
+		if (Keyboard::isKeyPressed(Keyboard::Right)){
+				hero_sprite.move(0.1, 0); //move(x, y)
+		}
+
+		if (Keyboard::isKeyPressed(Keyboard::Left)){
+				hero_sprite.move(-0.1, 0);
+		}
+		
+		if (Keyboard::isKeyPressed(Keyboard::Up)){
+				hero_sprite.move(0, -0.1);
+		}
+
+		if (Keyboard::isKeyPressed(Keyboard::Down)){
+				hero_sprite.move(0, 0.1);
+		}
+		
 
         window.clear();
-        window.draw(shape);
+        window.draw(hero_sprite);
         window.display();
     }
 
