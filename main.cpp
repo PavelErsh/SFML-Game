@@ -76,8 +76,8 @@ void Player::update(float time){
 		change_y = -speed;
 	}
 
-	center_x += change_x ;
-	center_y += change_y ;
+	center_x += change_x * time;
+	center_y += change_y * time;
 	speed = 0;
 	sprite.setPosition(center_x, center_y);
 }
@@ -150,6 +150,7 @@ int main()
     {
 		float time = clock.getElapsedTime().asMicroseconds();
 		time = time / 1000;	
+		clock.restart();
 		Event event;
         while (window.pollEvent(event))
         {
