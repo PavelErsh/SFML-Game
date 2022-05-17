@@ -15,10 +15,13 @@ int main()
     hero_sprite.setTexture(hero_texture);
     hero_sprite.setTextureRect(IntRect(0, 160, 80, 80));
     hero_sprite.setPosition(50, 50);
-   
+    
+	Clock clock;
 
     while (window.isOpen())
     {
+		float time = clock.getElapsedTime().asMicroseconds();
+		clock.restart();
         Event event;
         while (window.pollEvent(event))
         {
