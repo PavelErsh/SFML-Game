@@ -44,17 +44,15 @@ Player::Player(String user_file, float user_center_x, float user_center_y, float
 
 	image.loadFromFile(file_name);//загрузили файл в изображение 
 	texture.loadFromImage(image);//загружаем изображение в текстуру 
-
+	
 	sprite.setTexture(texture);//устанавливаем текстуру спрайту 
-
 	sprite.setTextureRect(IntRect(0, 0, width, height)); //вырезаем первый костюм 
-
 	sprite.setPosition( center_x, center_y ); 
 }
 
 void  Player::check_frame( int frame_number){
 	if( current_rect > frame_number){
-			current_rect -= 4;
+		current_rect -= 4;
 	}
 }
 
@@ -98,7 +96,6 @@ void Player::control( ){
 
 	if (Keyboard::isKeyPressed(Keyboard::Left)){
 			derection = 1;
-
 			speed = 0.1;
 		}
 		
