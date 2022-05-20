@@ -28,7 +28,7 @@ sf::String TileMap[HEIGHT_MAP] = {
 int main()
 {	
 	Image map_image;
-	map_image.loadFromFile("image/map.png");
+	map_image.loadFromFile("images/map.png");
 	Texture map_texture;
 	map_texture.loadFromImage(map_image);
 	Sprite map_sprite;
@@ -59,7 +59,31 @@ int main()
 			window.clear();
 
 			for (int i = 0; i < HEIGHT_MAP; i++){
-				for ()
+				for (int j = 0; j < WIDTH_MAP; j++){
+					if (TileMap[i][j] == 'h'){
+
+						map_sprite.setTextureRect(IntRect(64*0, 0, 64, 64));
+					}
+
+					if (TileMap[i][j] == 'g'){
+
+						map_sprite.setTextureRect(IntRect(64*1, 0, 64, 64));
+					}
+
+					if (TileMap[i][j] == 'l'){
+
+						map_sprite.setTextureRect(IntRect(64*2, 0, 64, 64));
+						}
+
+					if (TileMap[i][j] == 's'){
+
+					map_sprite.setTextureRect(IntRect(64*3, 0, 64, 64));
+					}
+
+					map_sprite.setPosition(j * 64, i * 64);
+
+					window.draw(map_sprite);
+				}
 			}
 
 			window.draw(my_player.sprite);
