@@ -163,11 +163,3 @@ void Player::run_animate(float time){
 		sprite.setTextureRect(IntRect(width * int(current_rect), height*3, width, height));
 	}
 }
-
-float Player::get_center_x(){
-	return center_x;
-}
-
-float Player::get_center_y(){
-	return center_y;
-}

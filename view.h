@@ -1,31 +1,29 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <iostream>
 using namespace sf;
 sf::View view;
 void move_cam(float x, float y)
 
 {
-	/*if (x < 200)
+	if (x < 200)
 
-		x = 200;//ÎÂ‚‡ˇ ÒÚÓÓÌ‡
+		x = 200;
 
 	if (x > 425)
 
-		x = 425;//Ô‡‚‡ˇ ÒÚÓÓÌ‡
+		x = 425;
 	if (y < 150)
 
-		y = 150;//‚ÂıÌˇˇ ÒÚÓÓÌ‡
+		y = 150;
 
 	if (y > 350)
 
-		y = 350;//ÌËÊÌˇˇ ÒÚÓÓÌ‡*/
+		y = 350;
 	view.setCenter(x + 10, y + 10);
 
 }
-// ÙÛÌÍˆËˇ ÔÂÂÏÂ˘ÂÌËˇ Í‡ÏÂ˚
 
-void view_map(float time)
+void move_map(float time)
 
 {
 

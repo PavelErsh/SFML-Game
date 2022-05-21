@@ -1,31 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include "player.h"
 #include "view.h"
+#include "map.h"
+
 using namespace sf;
-
-
-const int HEIGHT_MAP = 8;//размер карты высота 
-const int WIDTH_MAP = 10;//размер карты ширина 
-
-sf::String TileMap[HEIGHT_MAP] = {
-
-"ssssssssss",
-
-"sggggggggs",
-
-"sgghgggggs",
-
-"sggggggggs",
-
-"sggggggggs",
-
-"sggggglggs",
-
-"sggggggggs",
-
-"ssssssssss"
-
-}; 
 
 int main()
 {	
@@ -61,25 +39,25 @@ int main()
 			window.setView(view);
 
 			window.clear();
-
-			for (int i = 0; i < HEIGHT_MAP; i++){
-				for (int j = 0; j < WIDTH_MAP; j++){
-					if (TileMap[i][j] == 'h'){
+			
+			for (int h = 0; i < HEIGHT_MAP; i++){
+				for (int w = 0; j < WIDTH_MAP; j++){
+					if (TileMap[h][w] == 'h'){
 
 						map_sprite.setTextureRect(IntRect(64*0, 0, 64, 64));
 					}
 
-					if (TileMap[i][j] == 'g'){
+					if (TileMap[h][w] == 'g'){
 
 						map_sprite.setTextureRect(IntRect(64*1, 0, 64, 64));
 					}
 
-					if (TileMap[i][j] == 'l'){
+					if (TileMap[h][w] == 'l'){
 
 						map_sprite.setTextureRect(IntRect(64*2, 0, 64, 64));
 						}
 
-					if (TileMap[i][j] == 's'){
+					if (TileMap[h][w] == 's'){
 
 					map_sprite.setTextureRect(IntRect(64*3, 0, 64, 64));
 					}
@@ -89,7 +67,7 @@ int main()
 					window.draw(map_sprite);
 				}
 			}
-
+			
 			window.draw(my_player.sprite);
 			window.display();
     }
