@@ -21,7 +21,7 @@ class Player{
 
 	public:
 		Sprite sprite;
-		Player(String user_file, float user_center_x, float user_center_y, float user_w, float user_h, int user_max_frame);
+		Player(String user_file , float user_w, float user_h, float user_center_x, float user_center_y, int user_max_frame);
 		void check_frame();
 		void update(float time);
 		void control();
@@ -29,7 +29,7 @@ class Player{
 
 };
 
-Player::Player(String user_file, float user_center_x, float user_center_y, float user_w, float user_h, int user_max_frame ){
+Player::Player(String user_file , float user_w , float user_h, float user_center_x = 0, float user_center_y = 0, int user_max_frame = 3 ){
 	
 	file_name = user_file;
 	center_x = user_center_x;

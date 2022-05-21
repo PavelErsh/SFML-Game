@@ -35,7 +35,7 @@ int main()
 	map_sprite.setTexture(map_texture);
 
     RenderWindow window(sf::VideoMode(800, 800), "SFML test sample!");
-    Player my_player("images/wolf.png", 50, 25, 80, 80, 3);
+    Player my_player( "images/horse.png", 80,  80);//pos_x, pos_y, frame_w, frame_h, max_frame
     
 	Clock clock;
 	
