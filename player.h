@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include"view.h"
 using namespace sf;
 
 class Player{
@@ -26,6 +27,8 @@ class Player{
 		void update(float time);
 		void control();
 		void run_animate(float time);
+		float get_center_x();
+		float get_center_y();
 
 };
 
@@ -96,21 +99,30 @@ void Player::control( ){
 	if (Keyboard::isKeyPressed(Keyboard::Right)){
 			derection = 0;
 			speed = 0.1;
+
+			move_cam(center_x, center_y);
 		}
 
 	if (Keyboard::isKeyPressed(Keyboard::Left)){
 			derection = 1;
 			speed = 0.1;
+
+			
+			move_cam(center_x, center_y);
 		}
 		
 	if (Keyboard::isKeyPressed(Keyboard::Up)){
 			derection = 3;
 			speed = 0.1;
+
+			move_cam(center_x, center_y);
 		}
 
 	if (Keyboard::isKeyPressed(Keyboard::Down)){
 			derection = 2;
 			speed = 0.1;
+
+			move_cam(center_x, center_y);
 		}
 }
 
@@ -121,7 +133,7 @@ void Player::run_animate(float time){
 
 		check_frame();
 
-		sprite.setTextureRect(IntRect(width * int(current_rect), width*2, width, height));
+		sprite.setTextureRect(IntRect(240+width * int(current_rect), width*2, width, height));
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Left))
@@ -130,7 +142,7 @@ void Player::run_animate(float time){
 
 		check_frame();
 
-		sprite.setTextureRect(IntRect(width * int(current_rect), width, width, height));	
+		sprite.setTextureRect(IntRect (width * int(current_rect), width, width, height)  );	
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Down))
@@ -150,4 +162,12 @@ void Player::run_animate(float time){
 
 		sprite.setTextureRect(IntRect(width * int(current_rect), height*3, width, height));
 	}
+}
+
+float Player::get_center_x(){
+	return center_x;
+}
+
+float Player::get_center_y(){
+	return center_y;
 }

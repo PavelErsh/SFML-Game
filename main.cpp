@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include "player.h"
+#include "view.h"
 using namespace sf;
+
 
 const int HEIGHT_MAP = 8;//размер карты высота 
 const int WIDTH_MAP = 10;//размер карты ширина 
@@ -35,7 +37,8 @@ int main()
 	map_sprite.setTexture(map_texture);
 
     RenderWindow window(sf::VideoMode(800, 800), "SFML test sample!");
-    Player my_player( "images/horse.png", 80,  80);//pos_x, pos_y, frame_w, frame_h, max_frame
+	view.reset(sf::FloatRect(0, 0, 400, 280));
+    Player my_player( "images/wolf.png", 80,  80);
     
 	Clock clock;
 	
@@ -55,6 +58,7 @@ int main()
 			my_player.control();
 			my_player.update(time);
 			my_player.run_animate(time);
+			window.setView(view);
 
 			window.clear();
 

@@ -1,9 +1,24 @@
 
 
-class Map{
-    private:
+const int HEIGHT_MAP = 8;//размер карты высота 
+const int WIDTH_MAP = 10;//размер карты ширина 
 
-        int height_map;
-        int weight_map;
-        
-};
+sf::String TileMap[HEIGHT_MAP] = {
+
+"ssssssssss",
+
+"sggggggggs",
+
+"sgghgggggs",
+
+"sggggggggs",
+
+"sggggggggs",
+
+"sggggglggs",
+
+"sggggggggs",
+
+"ssssssssss"
+
+}; 
