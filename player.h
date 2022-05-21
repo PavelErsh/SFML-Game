@@ -27,8 +27,8 @@ class Player{
 		void update(float time);
 		void control();
 		void run_animate(float time);
-		float get_center_x();
-		float get_center_y();
+		float get_x();
+		float get_y();
 
 };
 
@@ -100,29 +100,23 @@ void Player::control( ){
 			derection = 0;
 			speed = 0.1;
 
-			move_cam(center_x, center_y);
 		}
 
 	if (Keyboard::isKeyPressed(Keyboard::Left)){
 			derection = 1;
 			speed = 0.1;
 
-			
-			move_cam(center_x, center_y);
 		}
 		
 	if (Keyboard::isKeyPressed(Keyboard::Up)){
 			derection = 3;
 			speed = 0.1;
 
-			move_cam(center_x, center_y);
 		}
 
 	if (Keyboard::isKeyPressed(Keyboard::Down)){
 			derection = 2;
 			speed = 0.1;
-
-			move_cam(center_x, center_y);
 		}
 }
 
@@ -162,4 +156,12 @@ void Player::run_animate(float time){
 
 		sprite.setTextureRect(IntRect(width * int(current_rect), height*3, width, height));
 	}
+}
+
+float Player::get_x(){
+	return center_x;
+}
+
+float Player::get_y(){
+	return center_y;
 }

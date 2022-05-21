@@ -40,8 +40,8 @@ int main()
 
 			window.clear();
 			
-			for (int h = 0; i < HEIGHT_MAP; i++){
-				for (int w = 0; j < WIDTH_MAP; j++){
+			for (int h = 0; h < HEIGHT_MAP; h++){
+				for (int w = 0; w < WIDTH_MAP; w++){
 					if (TileMap[h][w] == 'h'){
 
 						map_sprite.setTextureRect(IntRect(64*0, 0, 64, 64));
@@ -62,12 +62,13 @@ int main()
 					map_sprite.setTextureRect(IntRect(64*3, 0, 64, 64));
 					}
 
-					map_sprite.setPosition(j * 64, i * 64);
+					map_sprite.setPosition(w * 64, h * 64);
 
 					window.draw(map_sprite);
 				}
 			}
 			
+			move_cam(my_player.get_x(), my_player.get_y());
 			window.draw(my_player.sprite);
 			window.display();
     }
