@@ -9,7 +9,7 @@
 
     3 sudo apt-get install libsfml-dev
 
-    4 g++ main.o -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system
+    4 g++ main.cpp -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system
 
     5 ./sfml-app 
 ~~~
