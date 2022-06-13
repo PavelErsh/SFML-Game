@@ -14,7 +14,7 @@
     5 ./sfml-app 
 ~~~
 
-## If you want to run this code from maos 
+## If you want to run this code from macos 
 
 ~~~
     1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
