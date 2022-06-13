@@ -16,24 +16,26 @@ class Player{
 		float change_x, change_y;
 		float current_rect;
 		float time;
+		int max_frame;
 
 	public:
 		Sprite sprite;
-		Player(String user_file, float user_center_x, float user_center_y, float user_w, float user_h);
-		void check_frame(int frame_number);
+		Player(String user_file, float user_center_x, float user_center_y, float user_w, float user_h, int max_frame);
+		void check_frame();
 		void update(float time);
 		void control();
 		void run_animate(float time);
 
 };
 
-Player::Player(String user_file, float user_center_x, float user_center_y, float user_w, float user_h){
+Player::Player(String user_file, float user_center_x, float user_center_y, float user_w, float user_h, int user_max_frame = 3){
 	
 	file_name = user_file;
 	center_x = user_center_x;
 	center_y = user_center_y;
 	width = user_w;
 	height = user_h;
+	max_frame = user_max_frame;
 
 	derection = 0;
 	speed = 0;
@@ -50,9 +52,9 @@ Player::Player(String user_file, float user_center_x, float user_center_y, float
 	sprite.setPosition( center_x, center_y ); 
 }
 
-void  Player::check_frame( int frame_number){
-	if( current_rect > frame_number){
-		current_rect -= 4;
+void  Player::check_frame( ){
+	if( current_rect > max_frame){
+		current_rect -= max_frame;
 	}
 }
 
@@ -115,7 +117,7 @@ void Player::run_animate(float time){
 	{
 		current_rect += time * 0.005;
 
-		check_frame(4);
+		check_frame();
 
 		sprite.setTextureRect(IntRect(80 * int(current_rect), 160, 80, 80));
 	}
@@ -124,7 +126,7 @@ void Player::run_animate(float time){
 	{
 		current_rect += time*0.005;
 
-		check_frame(4);
+		check_frame();
 
 		sprite.setTextureRect(IntRect(80 * int(current_rect), 80, 80, 80));	
 	}
@@ -133,7 +135,7 @@ void Player::run_animate(float time){
 	{
 		current_rect += time*0.005;
 
-		check_frame(4);
+		check_frame();
 
 		sprite.setTextureRect(IntRect(80 * int(current_rect), 0, 80, 80));	
 	}
@@ -142,7 +144,7 @@ void Player::run_animate(float time){
 	{
 		current_rect += time*0.005;
 
-		check_frame(4);
+		check_frame();
 
 		sprite.setTextureRect(IntRect(80 * int(current_rect), 240, 80, 80));
 	}
