@@ -24,34 +24,32 @@ void move_cam(float x, float y)
 }
 
 void move_map(float time)
-
 {
-
-	if (Keyboard::isKeyPressed(Keyboard::D))
-
+	if (Keyboard::isKeyPressed(Keyboard::D)){
 		view.move(0.1*time, 0);
-	if (Keyboard::isKeyPressed(Keyboard::S))
-
+	}
+	if (Keyboard::isKeyPressed(Keyboard::S)){
 		view.move(0, 0.1*time);
-	if (Keyboard::isKeyPressed(Keyboard::A))
-
+	}
+	if (Keyboard::isKeyPressed(Keyboard::A)){
 		view.move(-0.1*time, 0);
-	if (Keyboard::isKeyPressed(Keyboard::W))
-
+	}
+	if (Keyboard::isKeyPressed(Keyboard::W)){
 		view.move(0, -0.1*time);
-	if (Keyboard::isKeyPressed(Keyboard::R))
-
+	}
+	if (Keyboard::isKeyPressed(Keyboard::R)){
 		view.setRotation(90);
-	if (Keyboard::isKeyPressed(Keyboard::U))
-
+	}
+	if (Keyboard::isKeyPressed(Keyboard::U)){
 		view.zoom(1.0001f);
-	if (Keyboard::isKeyPressed(Keyboard::Y))
-
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Y)){
 		view.zoom(0.9999f);
-	if (Keyboard::isKeyPressed(Keyboard::I))
-
+	}	
+	if (Keyboard::isKeyPressed(Keyboard::I)){
 		view.setSize(640, 480);
-	if (Keyboard::isKeyPressed(Keyboard::Q))
-
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Q)){
 		view.setViewport(sf::FloatRect(0, 0, 0.5f, 1));
+	}
 }
