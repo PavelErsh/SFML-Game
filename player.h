@@ -1,8 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-
+#include"view.h"
 using namespace sf;
-
 
 class Player{
 
@@ -23,13 +22,19 @@ class Player{
 
 	public:
 		Sprite sprite;
-		Player(String user_file, float user_center_x, float user_center_y, float user_w, float user_h, int max_frame);
+
+		Player(String user_file , float user_w, float user_h, float user_center_x, float user_center_y, int user_max_frame);
 		void check_frame();
 		void update(float time);
 		void control();
 		void run_animate(float time);
 
+		float get_x();
+		float get_y();
+
 };
+
+
 
 Player::Player(String user_file, float user_center_x, float user_center_y, float user_w, float user_h, int user_max_frame = 3){
 	
@@ -97,16 +102,19 @@ void Player::control( ){
 	if (Keyboard::isKeyPressed(Keyboard::Right)){
 			derection = 0;
 			speed = 0.1;
+
 		}
 
 	if (Keyboard::isKeyPressed(Keyboard::Left)){
 			derection = 1;
 			speed = 0.1;
+
 		}
 		
 	if (Keyboard::isKeyPressed(Keyboard::Up)){
 			derection = 3;
 			speed = 0.1;
+
 		}
 
 	if (Keyboard::isKeyPressed(Keyboard::Down)){
@@ -122,7 +130,12 @@ void Player::run_animate(float time){
 
 		check_frame();
 
+		sprite.setTextureRect(IntRect(width * int(current_rect), width*2, width, height));
+		//sprite.setTextureRect(IntRect(240+width * int(current_rect), width*2, width, height));
+
+
 		sprite.setTextureRect(IntRect(80 * int(current_rect), 160, 80, 80));
+
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Left))
@@ -131,7 +144,11 @@ void Player::run_animate(float time){
 
 		check_frame();
 
+
+		sprite.setTextureRect(IntRect (width * int(current_rect), width, width, height)  );	
+
 		sprite.setTextureRect(IntRect(80 * int(current_rect), 80, 80, 80));	
+
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Down))
@@ -140,7 +157,11 @@ void Player::run_animate(float time){
 
 		check_frame();
 
+
+		sprite.setTextureRect(IntRect(width * int(current_rect), 0, width, height));	
+
 		sprite.setTextureRect(IntRect(80 * int(current_rect), 0, 80, 80));	
+
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Up))
@@ -149,6 +170,20 @@ void Player::run_animate(float time){
 
 		check_frame();
 
+
+		sprite.setTextureRect(IntRect(width * int(current_rect), height*3, width, height));
+	}
+}
+
+
+float Player::get_x(){
+	return center_x;
+}
+
+float Player::get_y(){
+	return center_y;
+}
 		sprite.setTextureRect(IntRect(80 * int(current_rect), 240, 80, 80));
 	}
 }
+
