@@ -1,10 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "player.h"
-
 #include "view.h"
 #include "map.h"
-=======
-
 
 using namespace sf;
 
@@ -19,7 +16,7 @@ int main()
 
     RenderWindow window(sf::VideoMode(800, 800), "SFML test sample!");
 	view.reset(sf::FloatRect(0, 0, 400, 280));
-    Player my_player( "images/wolf.png", 80,  80);
+    Player my_player( "images/stone.png", 90,  90);
     
 	Clock clock;
 	
