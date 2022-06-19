@@ -126,8 +126,8 @@ void Player::run_animate(float time){
 		current_rect += time * 0.005;
 
 		check_frame();
-
-		sprite.setTextureRect(IntRect(240+width * int(current_rect), width*2, width, height));
+		sprite.setTextureRect(IntRect(width * int(current_rect), width*2, width, height));
+		//sprite.setTextureRect(IntRect(240+width * int(current_rect), width*2, width, height));
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Left))
@@ -157,6 +157,7 @@ void Player::run_animate(float time){
 		sprite.setTextureRect(IntRect(width * int(current_rect), height*3, width, height));
 	}
 }
+
 
 float Player::get_x(){
 	return center_x;
