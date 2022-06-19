@@ -1,4 +1,4 @@
-# Hello, it my simple project with C++ and SFML 
+# Hello, it is my simple project with C++ and SFML 
 
 ## If you want to run this code from ubuntu 
 
