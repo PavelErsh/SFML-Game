@@ -28,3 +28,22 @@
     5 ./prog 
 ~~~
 
+sf::String TileMap[HEIGHT_MAP] = {
+
+"ssssssssss",
+
+"sggggggggs",
+
+"sgghgggggs",
+
+"sggggggggs",
+
+"sggggggggs",
+
+"sggggglggs",
+
+"sggggggggs",
+
+"ssssssssss"
+
+}; 
