@@ -27,12 +27,13 @@ class Player{
 		void update(float time);
 		void control();
 		void run_animate(float time);
+		void map_touch();
 		float get_x();
 		float get_y();
 
 };
 
-Player::Player(String user_file , float user_w , float user_h, float user_center_x = 0, float user_center_y = 0, int user_max_frame = 3 ){
+Player::Player(String user_file , float user_w , float user_h, float user_center_x = 0, float user_center_y = 0, int user_max_frame = 4 ){
 	
 	file_name = user_file;
 	center_x = user_center_x;
@@ -92,6 +93,7 @@ void Player::update(float time ){
 	center_x += change_x * time;
 	center_y += change_y * time;
 	speed = 0;
+	map_touch();
 	sprite.setPosition(center_x, center_y);
 }
 
@@ -156,6 +158,10 @@ void Player::run_animate(float time){
 
 		sprite.setTextureRect(IntRect(width * int(current_rect), height*3, width, height));
 	}
+}
+
+void Player::map_touch(){
+	
 }
 
 float Player::get_x(){
