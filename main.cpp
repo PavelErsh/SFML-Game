@@ -1,7 +1,10 @@
 #include <SFML/Graphics.hpp>
 #include "player.h"
+
 #include "view.h"
 #include "map.h"
+=======
+
 
 using namespace sf;
 

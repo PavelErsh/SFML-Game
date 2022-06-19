@@ -22,17 +22,21 @@ class Player{
 
 	public:
 		Sprite sprite;
+
 		Player(String user_file , float user_w, float user_h, float user_center_x, float user_center_y, int user_max_frame);
 		void check_frame();
 		void update(float time);
 		void control();
 		void run_animate(float time);
+
 		float get_x();
 		float get_y();
 
 };
 
-Player::Player(String user_file , float user_w , float user_h, float user_center_x = 0, float user_center_y = 0, int user_max_frame = 3 ){
+
+
+Player::Player(String user_file, float user_center_x, float user_center_y, float user_w, float user_h, int user_max_frame = 3){
 	
 	file_name = user_file;
 	center_x = user_center_x;
@@ -46,7 +50,6 @@ Player::Player(String user_file , float user_w , float user_h, float user_center
 	change_x = 0;
 	change_y = 0;
 	current_rect = 0; //frame for animation
-
 
 
 	image.loadFromFile(file_name);//загрузили файл в изображение 
@@ -126,8 +129,13 @@ void Player::run_animate(float time){
 		current_rect += time * 0.005;
 
 		check_frame();
+
 		sprite.setTextureRect(IntRect(width * int(current_rect), width*2, width, height));
 		//sprite.setTextureRect(IntRect(240+width * int(current_rect), width*2, width, height));
+
+
+		sprite.setTextureRect(IntRect(80 * int(current_rect), 160, 80, 80));
+
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Left))
@@ -136,7 +144,11 @@ void Player::run_animate(float time){
 
 		check_frame();
 
+
 		sprite.setTextureRect(IntRect (width * int(current_rect), width, width, height)  );	
+
+		sprite.setTextureRect(IntRect(80 * int(current_rect), 80, 80, 80));	
+
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Down))
@@ -145,7 +157,11 @@ void Player::run_animate(float time){
 
 		check_frame();
 
+
 		sprite.setTextureRect(IntRect(width * int(current_rect), 0, width, height));	
+
+		sprite.setTextureRect(IntRect(80 * int(current_rect), 0, 80, 80));	
+
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Up))
@@ -153,6 +169,7 @@ void Player::run_animate(float time){
 		current_rect += time*0.005;
 
 		check_frame();
+
 
 		sprite.setTextureRect(IntRect(width * int(current_rect), height*3, width, height));
 	}
@@ -166,3 +183,7 @@ float Player::get_x(){
 float Player::get_y(){
 	return center_y;
 }
+		sprite.setTextureRect(IntRect(80 * int(current_rect), 240, 80, 80));
+	}
+}
+
