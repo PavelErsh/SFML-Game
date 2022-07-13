@@ -27,3 +27,5 @@
 
     5 ./prog 
 ~~~
+
+https://bitrix24public.com/hwschool.bitrix24.ru/docs/pub/15b58897c774c51f303348ea865cf6f7/default/?&
