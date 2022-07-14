@@ -1,9 +1,8 @@
 #pragma once
+
 #include <SFML/Graphics.hpp>
 #include"view.h"
 #include "map.h"
-
-#include <iostream>
 
 using namespace sf;
 

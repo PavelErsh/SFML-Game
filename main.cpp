@@ -71,6 +71,7 @@ int main()
                     window.draw(map_sprite);
                 }
             }
+            
 			move_cam(my_player.get_x(), my_player.get_y());
 			move_map(time);
 			window.draw(my_player.sprite);
