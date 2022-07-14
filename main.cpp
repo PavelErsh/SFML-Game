@@ -46,21 +46,19 @@ int main()
 			for(int  h=0; h<HEIGHT_MAP;h++){
                 for(int w=0; w<WIDTH_MAP; w++){
                     if(TileMap[h][w]=='h'){
-                        map_sprite.setTextureRect(IntRect(64*0, 0, 64, 64));
+                        map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*0, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
                     }
                     if(TileMap[h][w]=='s'){
-                        map_sprite.setTextureRect(IntRect(64*3, 0, 64, 64));
+                        map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*3, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
                     }
                     if(TileMap[h][w]=='l'){
-                        map_sprite.setTextureRect(IntRect(64*2, 0, 64, 64));
+                        map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*2, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
                     }
                     if(TileMap[h][w]=='g'){
-                        map_sprite.setTextureRect(IntRect(64*1, 0, 64, 64));
+                        map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*1, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
                     }
                     
-
-                    map_sprite.setPosition(w*64, h*64);
-
+                    map_sprite.setPosition(w*WIDTH_MAP_TILE, h*HEIGHT_MAP_TILE);
                     window.draw(map_sprite);
                 }
             }

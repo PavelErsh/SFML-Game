@@ -118,21 +118,18 @@ void Player::control()
 	{
 		derection = 0;
 		speed = 0.1;
-
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Left))
 	{
 		derection = 1;
 		speed = 0.1;
-
 	}
 		
 	if (Keyboard::isKeyPressed(Keyboard::Up))
 	{
 		derection = 3;
 		speed = 0.1;
-
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::Down))
@@ -142,7 +139,8 @@ void Player::control()
 	}
 }
 
-void Player::run_animate(float time){
+void Player::run_animate(float time)
+{
 	if (Keyboard::isKeyPressed(Keyboard::Right))
 	{
 		current_rect += time * 0.005;
@@ -173,47 +171,49 @@ void Player::run_animate(float time){
 	}
 }
 
-
-
 void Player::map_touch(){
-    for(int i=center_y/HEIGHT_MAP_TILE; i<(center_y+height)/HEIGHT_MAP_TILE;i++){
-        for(int k=center_x/WIDTH_MAP_TILE; k<(center_x+width)/WIDTH_MAP_TILE;k++){
-            if(TileMap[i][k]=='s'){
-                if(change_y>0){
-                    center_y = i*HEIGHT_MAP_TILE-height;
+    for(int i=center_y/HEIGHT_MAP_TILE; i<(center_y+height)/HEIGHT_MAP_TILE;i++)
+	{
+        for(int k=center_x/WIDTH_MAP_TILE; k<(center_x+width)/WIDTH_MAP_TILE;k++)
+		{
+            if(TileMap[i][k]=='s')
+			{
+            	if(change_y>0)
+				{
+					center_y = i*HEIGHT_MAP_TILE-height;
+				}
 
-                }
+				if(change_y<0)
+				{
+					center_y = i* HEIGHT_MAP_TILE+HEIGHT_MAP_TILE;
+				}
 
-                if(change_y<0){
-                    center_y = i* HEIGHT_MAP_TILE+HEIGHT_MAP_TILE;
-                }
-                if(change_x>0){
-                    center_x = k*WIDTH_MAP_TILE-width;
-                }
-                if(change_x<0){
-                    center_x = k*WIDTH_MAP_TILE+WIDTH_MAP_TILE;
-                }
-            }
+				if(change_x>0)
+				{
+					center_x = k*WIDTH_MAP_TILE-width;
+				}
 
-            if(TileMap[i][k]=='h'){
-                TileMap[i][k] = 'g';
-                int randomX = 1+rand()%(HEIGHT_MAP-2);
-                int randomY = 1+rand()%(HEIGHT_MAP-2);
-                TileMap[randomX][randomY] = 'h';
-            }
+				if(change_x<0)
+				{
+					center_x = k*WIDTH_MAP_TILE+WIDTH_MAP_TILE;
+				}
+			}
 
-            if(TileMap[i][k]=='l'){
-                TileMap[i][k] = 'g';
-            }
+			if(TileMap[i][k]=='h')
+			{
+				TileMap[i][k] = 'g';
+				int randomX = 1+rand()%(HEIGHT_MAP-2);
+				int randomY = 1+rand()%(HEIGHT_MAP-2);
+				TileMap[randomX][randomY] = 'h';
+			}
+
+			if(TileMap[i][k]=='l')
+			{
+				TileMap[i][k] = 'g';
+			}
         }
-
     }
-
-
-
 }
-
-
 
 float Player::get_x()
 {
