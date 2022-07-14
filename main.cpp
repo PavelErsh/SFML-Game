@@ -10,6 +10,13 @@ const int SCREEN_HEIGHT = 800;
 
 int main()
 {	
+    Font font;
+    font.loadFromFile("font/text.ttf");
+    Text text("", font, 20); 
+    text.setFillColor(Color::Black);
+    text.setStyle(sf::Text::Bold | sf::Text::Underlined); 
+
+
 	Image map_image;
 	map_image.loadFromFile("images/map.png");
 	Texture map_texture;
@@ -74,7 +81,13 @@ int main()
             
 			move_cam(my_player.get_x(), my_player.get_y());
 			move_map(time);
+
 			window.draw(my_player.sprite);
+
+            text.setString("Score:" + std::to_string( my_player.get_score()) );
+            text.setPosition(view.getCenter().x + 90 , view.getCenter().y + 90);
+            window.draw(text);
+
 			window.display();
     }
 
