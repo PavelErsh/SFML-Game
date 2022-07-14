@@ -43,18 +43,27 @@ int main()
 
 			window.clear();
 			
-			for(int  h=0; h<HEIGHT_MAP;h++){
-                for(int w=0; w<WIDTH_MAP; w++){
-                    if(TileMap[h][w]=='h'){
+			for(int  h=0; h<HEIGHT_MAP;h++)
+            {
+                for(int w=0; w<WIDTH_MAP; w++)
+                {
+                    if(TileMap[h][w]=='h')
+                    {
                         map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*0, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
                     }
-                    if(TileMap[h][w]=='s'){
+
+                    if(TileMap[h][w]=='s')
+                    {
                         map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*3, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
                     }
-                    if(TileMap[h][w]=='l'){
+
+                    if(TileMap[h][w]=='l')
+                    {
                         map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*2, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
                     }
-                    if(TileMap[h][w]=='g'){
+
+                    if(TileMap[h][w]=='g')
+                    {
                         map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*1, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
                     }
                     

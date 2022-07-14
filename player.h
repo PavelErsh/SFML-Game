@@ -1,5 +1,4 @@
 #pragma once
-
 #include <SFML/Graphics.hpp>
 #include"view.h"
 #include "map.h"
@@ -10,7 +9,6 @@ using namespace sf;
 
 class Player
 {
-
 	private:
 
 		String file_name;
@@ -172,44 +170,44 @@ void Player::run_animate(float time)
 }
 
 void Player::map_touch(){
-    for(int i=center_y/HEIGHT_MAP_TILE; i<(center_y+height)/HEIGHT_MAP_TILE;i++)
+    for(int x=center_y/HEIGHT_MAP_TILE; x<(center_y+height)/HEIGHT_MAP_TILE; x++)
 	{
-        for(int k=center_x/WIDTH_MAP_TILE; k<(center_x+width)/WIDTH_MAP_TILE;k++)
+        for(int y=center_x/WIDTH_MAP_TILE; y<(center_x+width)/WIDTH_MAP_TILE; y++)
 		{
-            if(TileMap[i][k]=='s')
+            if(TileMap[x][y] == 's')
 			{
-            	if(change_y>0)
+            	if(change_y > 0)
 				{
-					center_y = i*HEIGHT_MAP_TILE-height;
+					center_y = x*HEIGHT_MAP_TILE-height;
 				}
 
-				if(change_y<0)
+				if(change_y < 0)
 				{
-					center_y = i* HEIGHT_MAP_TILE+HEIGHT_MAP_TILE;
+					center_y = x* HEIGHT_MAP_TILE+HEIGHT_MAP_TILE;
 				}
 
-				if(change_x>0)
+				if(change_x > 0)
 				{
-					center_x = k*WIDTH_MAP_TILE-width;
+					center_x = y*WIDTH_MAP_TILE-width;
 				}
 
-				if(change_x<0)
+				if(change_x < 0)
 				{
-					center_x = k*WIDTH_MAP_TILE+WIDTH_MAP_TILE;
+					center_x = y*WIDTH_MAP_TILE+WIDTH_MAP_TILE;
 				}
 			}
 
-			if(TileMap[i][k]=='h')
+			if(TileMap[x][y] == 'h')
 			{
-				TileMap[i][k] = 'g';
+				TileMap[x][y] = 'g';
 				int randomX = 1+rand()%(HEIGHT_MAP-2);
 				int randomY = 1+rand()%(HEIGHT_MAP-2);
 				TileMap[randomX][randomY] = 'h';
 			}
 
-			if(TileMap[i][k]=='l')
+			if(TileMap[x][y] == 'l')
 			{
-				TileMap[i][k] = 'g';
+				TileMap[x][y] = 'g';
 			}
         }
     }
