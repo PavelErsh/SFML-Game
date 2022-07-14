@@ -5,6 +5,9 @@
 
 using namespace sf;
 
+const int SCREEN_WIDHT = 800;
+const int SCREEN_HEIGHT = 800;
+
 int main()
 {	
 	Image map_image;
@@ -14,7 +17,7 @@ int main()
 	Sprite map_sprite;
 	map_sprite.setTexture(map_texture);
 
-    RenderWindow window(sf::VideoMode(800, 800), "SFML test sample!");
+    RenderWindow window(sf::VideoMode(SCREEN_WIDHT, SCREEN_HEIGHT), "SFML test sample!");
 	view.reset(sf::FloatRect(0, 0, 400, 280));
     Player my_player( "images/stone.png", 90,  90);
     
@@ -40,33 +43,35 @@ int main()
 
 			window.clear();
 			
-			for (int h = 0; h < HEIGHT_MAP; h++){
-				for (int w = 0; w < WIDTH_MAP; w++){
-					if (TileMap[h][w] == 'h'){
+			for(int  h=0; h<HEIGHT_MAP;h++)
+            {
+                for(int w=0; w<WIDTH_MAP; w++)
+                {
+                    if(TileMap[h][w]=='h')
+                    {
+                        map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*0, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
+                    }
 
-						map_sprite.setTextureRect(IntRect(64*0, 0, 64, 64));
-					}
+                    if(TileMap[h][w]=='s')
+                    {
+                        map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*3, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
+                    }
 
-					if (TileMap[h][w] == 'g'){
+                    if(TileMap[h][w]=='l')
+                    {
+                        map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*2, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
+                    }
 
-						map_sprite.setTextureRect(IntRect(64*1, 0, 64, 64));
-					}
-
-					if (TileMap[h][w] == 'l'){
-
-						map_sprite.setTextureRect(IntRect(64*2, 0, 64, 64));
-						}
-
-					if (TileMap[h][w] == 's'){
-
-					map_sprite.setTextureRect(IntRect(64*3, 0, 64, 64));
-					}
-
-					map_sprite.setPosition(w * 64, h * 64);
-
-					window.draw(map_sprite);
-				}
-			}
+                    if(TileMap[h][w]=='g')
+                    {
+                        map_sprite.setTextureRect(IntRect(WIDTH_MAP_TILE*1, 0, WIDTH_MAP_TILE, HEIGHT_MAP_TILE));
+                    }
+                    
+                    map_sprite.setPosition(w*WIDTH_MAP_TILE, h*HEIGHT_MAP_TILE);
+                    window.draw(map_sprite);
+                }
+            }
+            
 			move_cam(my_player.get_x(), my_player.get_y());
 			move_map(time);
 			window.draw(my_player.sprite);
