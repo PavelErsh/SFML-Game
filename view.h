@@ -16,9 +16,9 @@ void move_cam(float x, float y)
 
 		y = 150;
 
-	if (y > 350)
+	if (y > 600)
 
-		y = 350;
+		y = 600;
 	view.setCenter(x + 10, y + 10);
 
 }
