@@ -86,6 +86,7 @@ int main()
 
             text.setString("Score:" + std::to_string( my_player.get_score()) );
             text.setPosition(view.getCenter().x + 90 , view.getCenter().y + 90);
+            my_player.map_touch();
             window.draw(text);
 
 			window.display();

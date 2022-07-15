@@ -205,10 +205,10 @@ void Player::map_touch(){
 			if(TileMap[x][y] == 'h')
 			{
 				TileMap[x][y] = 'g';
-				score++;
 				int randomX = 1+rand()%(HEIGHT_MAP-2);
 				int randomY = 1+rand()%(HEIGHT_MAP-2);
 				TileMap[randomX][randomY] = 'h';
+				score++;
 			}
 
 			if(TileMap[x][y] == 'l')
