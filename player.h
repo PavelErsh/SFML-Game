@@ -23,6 +23,8 @@ class Player
 		float time;
 
 		int max_frame;
+		int score;
+		int lives;
 
 	public:
 
@@ -38,6 +40,9 @@ class Player
 
 		float get_x();
 		float get_y();
+
+		int get_score();
+		int get_lives();
 
 };
 
@@ -56,6 +61,8 @@ Player::Player(String user_file, float user_w, float user_h, float user_center_x
 	change_x = 0;
 	change_y = 0;
 	current_rect = 0; //frame for animation
+	score = 0;
+	lives = 3;
 
 	image.loadFromFile(file_name);
 	texture.loadFromImage(image);
@@ -202,11 +209,13 @@ void Player::map_touch(){
 				int randomX = 1+rand()%(HEIGHT_MAP-2);
 				int randomY = 1+rand()%(HEIGHT_MAP-2);
 				TileMap[randomX][randomY] = 'h';
+				score++;
 			}
 
 			if(TileMap[x][y] == 'l')
 			{
 				TileMap[x][y] = 'g';
+				lives--;
 			}
         }
     }
@@ -220,4 +229,14 @@ float Player::get_x()
 float Player::get_y()
 {
 	return center_y;
+}
+
+int Player::get_lives()
+{
+	return lives;
+}
+
+int Player::get_score()
+{
+	return score;
 }
