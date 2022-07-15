@@ -62,6 +62,7 @@ Player::Player(String user_file, float user_w, float user_h, float user_center_x
 	change_y = 0;
 	current_rect = 0; //frame for animation
 	score = 0;
+	lives = 3;
 
 	image.loadFromFile(file_name);
 	texture.loadFromImage(image);
