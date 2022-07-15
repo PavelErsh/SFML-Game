@@ -46,7 +46,7 @@ class Player
 
 };
 
-Player::Player(String user_file, float user_w, float user_h, float user_center_x = 200, float user_center_y = 200, int user_max_frame = 4 )
+Player::Player(String user_file, float user_w, float user_h, float user_center_x = 200, float user_center_y = 200, int user_max_frame = 3 )
 {
 	
 	file_name = user_file;

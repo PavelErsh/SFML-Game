@@ -30,7 +30,7 @@ int main()
 
     RenderWindow window(sf::VideoMode(SCREEN_WIDHT, SCREEN_HEIGHT), "SFML test sample!");
 	view.reset(sf::FloatRect(0, 0, 400, 280));
-    Player my_player( "images/stone.png", 90,  90);
+    Player my_player( "images/wolf.png", 80,  80);
     
 	Clock clock;
 	
@@ -57,7 +57,6 @@ int main()
             {
                 t_GameOver.setString("Game Over");
                 t_GameOver.setPosition(view.getCenter().x-60, view.getCenter().y-50);
-                //view.move(0.1, 0);
                 view.rotate(0.001);
             }
 
@@ -96,7 +95,6 @@ int main()
                 }
             }
             
-			//move_cam(my_player.get_x(), my_player.get_y());
 			move_map(time);
 
 			window.draw(my_player.sprite);
