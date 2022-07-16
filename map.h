@@ -12,17 +12,17 @@ sf::String TileMap[HEIGHT_MAP] = {
 
 "ssssssssss",
 
-"sglggghggs",
+"sgglgghggs",
 
-"sgglgggggs",
+"sggggggggs",
 
 "sghgglgggs",
 
-"sgghggglgs",
+"sgghgggggs",
 
 "sghglggggs",
 
-"sglggghggs",
+"sgggggggls",
 
 "ssssssssss"
 

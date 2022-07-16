@@ -22,7 +22,7 @@ int main()
 
 
 	Image map_image;
-	map_image.loadFromFile("images/map.png");
+	map_image.loadFromFile("images/map1.png");
 	Texture map_texture;
 	map_texture.loadFromImage(map_image);
 	Sprite map_sprite;
