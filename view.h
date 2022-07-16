@@ -52,13 +52,8 @@ void move_map(float time)
 		view.zoom(0.9999f);
 	}
 
-	if (Keyboard::isKeyPressed(Keyboard::I))
+	if (Keyboard::isKeyPressed(Keyboard::S))
 	{
 		view.setSize(640, 480);
-	}
-
-	if (Keyboard::isKeyPressed(Keyboard::Q))
-	{
-		view.setViewport(sf::FloatRect(0, 0, 0.5f, 1));
 	}
 }
