@@ -43,4 +43,4 @@
 
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
 
-https://bitrix24public.com/hwschool.bitrix24.ru/docs/pub/aca94a4a754455da4d13f3e69826f869/default/?&
+https://hwschool.bitrix24.ru/~lm9o1
