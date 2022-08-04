@@ -43,4 +43,30 @@
 
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
 
-https://hwschool.bitrix24.ru/~lm9o1
+sf::String TileMap[HEIGHT_MAP] = {
+
+"sssssssssssssssssssss",
+
+"sgggggggggggggggggggs",
+
+"sgggggggggggggggggggs",
+
+"sgggggggggggggggggggs",
+
+"sgggggggggggggggggggs",
+
+"sgggggggggggggggggggs",
+
+"sgggggggggggggggggggs",
+
+"sgggggggggggggggggggs",
+
+"sgggggggggggggggggggs",
+
+"sgggggggggggggggggggs",
+
+"sgggggggggggggggggggs",
+
+"sssssssssssssssssssss"
+
+};
