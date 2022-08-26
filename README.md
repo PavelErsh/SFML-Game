@@ -46,3 +46,6 @@
 https://bitrix24public.com/hwschool.bitrix24.ru/docs/pub/20981f65cb73c9b0af974d111006acba/default/?&
 
 https://hwschool.bitrix24.ru/~IErTw
+
+
+g++ main.cpp Engine.cpp Engine.h Movement.cpp Movement.h Map.cpp Map.h Player.cpp Player.h Coin.cpp Coin.h Camera.cpp Camera.h  -o sfml-app -lsfml-graphics -lsfml-window -lsfml-system
