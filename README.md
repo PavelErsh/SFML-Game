@@ -44,4 +44,4 @@
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
 
 
-g++ main.cpp Engine.cpp Engine.h KeyPressedAction.cpp KeyPressedAction.h Map.cpp Map.h Camera.cpp Camera.h Entity.cpp Entity.h Money.cpp Money.h MoveEntity.cpp MoveEntity.h Player.cpp Player.h
+https://youtu.be/TZocYCOPqMg
