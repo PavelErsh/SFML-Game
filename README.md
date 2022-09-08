@@ -44,4 +44,4 @@
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
 
 
-https://bitrix24public.com/hwschool.bitrix24.ru/docs/pub/a8c8c3701e33826a12df77c2f5dbdc1b/default/?&
+g++ main.cpp Engine.cpp Engine.h KeyPressedAction.cpp KeyPressedAction.h Map.cpp Map.h Camera.cpp Camera.h Entity.cpp Entity.h Money.cpp Money.h MoveEntity.cpp MoveEntity.h Player.cpp Player.h
