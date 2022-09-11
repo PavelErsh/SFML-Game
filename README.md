@@ -43,27 +43,6 @@
 
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
 
-"kkkkkkkkkkkkkkkkkkkkk",
-
-"kggggggggmggggkgmkgmk",
-
-"kgggggggggggggkggkggk",
-
-"kgggggkkkkkgggkggkggk",
-
-"kkkkkkkgmgkgggkggkggk",
-
-"kgggggggggkgggkggkggk",
-
-"kgggggggggkgggkggkggk",
-
-"kggkkkkkkkkgggkggkggk",
-
-"kggggggggggggggggkggk",
-
-"kggggggmgggggggmggggk",
-
-"kgggggggggggggggggggk",
-
-"kmgkkkkkkkkkkkkkkkkkk"
+for (auto it = entities.begin(); it != entities.end();it++) {// цикл по игровым объектам 
+} 
 
