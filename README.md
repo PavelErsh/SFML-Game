@@ -43,4 +43,6 @@
 
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
 
+https://www.youtube.com/watch?v=TZocYCOPqMg&feature=youtu.be&themeRefresh=1
+https://hwschool.bitrix24.ru/~hMh1B
 
