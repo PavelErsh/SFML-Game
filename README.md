@@ -43,6 +43,4 @@
 
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
 
-for (auto it = entities.begin(); it != entities.end();it++) {// цикл по игровым объектам 
-} 
 
