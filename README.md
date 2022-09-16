@@ -27,7 +27,7 @@
 ~~~
 
 ### if you want to run this code form Windows
-### Read this [official documentation][1]
+### Read this [official documentation [1]
 
 ## Game screenshots
 ![screen](https://raw.githubusercontent.com/PavelErsh/SFML-Game/master/images/Screenshot%202022-07-16%20at%2009.42.08.png)
