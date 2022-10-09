@@ -37,7 +37,7 @@
 ### ___R___ and ___T___ for rotation
 ### ___U___ and ___Y___ for zoom camera,  ___S___ for set camera size
 
-
+https://hwschool.bitrix24.ru/~ZMBhY
 
 
 
