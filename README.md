@@ -37,21 +37,7 @@
 ### ___R___ and ___T___ for rotation
 ### ___U___ and ___Y___ for zoom camera,  ___S___ for set camera size
 
-sf::String TileMap[HEIGHT_MAP] = {
-"kkkkkkkkkkkkkkkkkkkkk",
-"kggggggggmgggakgmkgmk",
-"kgggggggggggggkggkggk",
-"kgggggkkkkkgggkggkggk",
-"kkkkkkkgmgkgggkggkggk",
-"kgggggggggkgggkggkggk",
-"kgggggggggkgggkggkggk",
-"kggkkkkkkkkgggkggkggk",
-"kggggggagggggggggkggk",
-"kggggggmgggggggmggggk",
-"kggggggggggggggggggak",
-"kmgkkkkkkkkkkkkkkkkkk"
-}; 
-
+https://bitrix24public.com/hwschool.bitrix24.ru/docs/pub/5d3f4c883b63b96fc5e8f2aa8bb75d98/default/?&
 
 
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
