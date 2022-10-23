@@ -37,7 +37,7 @@
 ### ___R___ and ___T___ for rotation
 ### ___U___ and ___Y___ for zoom camera,  ___S___ for set camera size
 
-Видео-презентация итогового проекта
+(https://youtu.be/ibDptexmZdY)
 
 
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
