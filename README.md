@@ -36,7 +36,6 @@
 ### Use ___UP___, ___DOWN___, ___RIGHT___, ___LEFT___ arrow for control your hero
 ### ___R___ and ___T___ for rotation
 ### ___U___ and ___Y___ for zoom camera,  ___S___ for set camera size
-https://hwschool.bitrix24.ru/~RQDZU
 
 
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
