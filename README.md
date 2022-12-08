@@ -39,12 +39,3 @@
 
 
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
-
-void gnomesort(int n, int ar[])
- {
-int i = 0;
- while (i < n) {
- if (i == 0 I| ar[i-1] <- ar[i]) itt;
- else {int tmp = arLi]; ar[i] = arLi-1]; ar[-i] = tmp;}
- }
- }
