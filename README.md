@@ -31,7 +31,6 @@
 
 ## Game screenshots
 ![screen](https://raw.githubusercontent.com/PavelErsh/SFML-Game/master/images/Screenshot%202022-07-16%20at%2009.42.08.png)
-https://hwschool.bitrix24.ru/~72rJ4
 ## Game control
 ### Use ___UP___, ___DOWN___, ___RIGHT___, ___LEFT___ arrow for control your hero
 ### ___R___ and ___T___ for rotation
@@ -40,4 +39,4 @@ https://hwschool.bitrix24.ru/~72rJ4
 
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
 
-https://hwschool.bitrix24.ru/~QVKma
+https://hwschool.bitrix24.ru/~FVwN0
