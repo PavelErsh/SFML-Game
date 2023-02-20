@@ -39,18 +39,4 @@
 
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
 
-"ssssssssss",
 
-"sggggggggs",
-
-"sgghgggggs",
-
-"sggggggggs",
-
-"sggggggggs",
-
-"sggggglggs",
-
-"sggggggggs",
-
-"ssssssssss"
