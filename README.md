@@ -36,8 +36,7 @@
 ### ___R___ and ___T___ for rotation
 ### ___U___ and ___Y___ for zoom camera,  ___S___ for set camera size
 
-
+https://hwschool.bitrix24.ru/~lrm8O
 [1]: (https://www.sfml-dev.org/tutorials/2.5/start-vc.php)
 
 
-https://hwschool.bitrix24.ru/~089oT
